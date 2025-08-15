@@ -1,9 +1,61 @@
 In this class we create function that calls api endpoints
 
-class MovieRemoteDataSource{
+abstract class BaseMovieRemoteDataSource {
 
+ Future<List<MovieModel>> getAllNowPlayingMovies() ;
+ Future<List<MovieModel>> getPopularMovies() ;
+ Future<List<MovieModel>> getTopRatedMovies() ;
+
+}
+
+
+class MovieRemoteDataSource extends BaseMovieRemoteDataSource {
+
+// getAllNowPlayingMovies
+@override
    Future<List<MovieModel>> getAllNowPlayingMovies() async{
-final response = await Dio().get(Path);
+final response = await Dio().get(Path); //be sure to use AppConstants , don't use hard coded code . getAllNowPlayingMoviesPath
+        
+
+        if(response.statusCode ==200){
+            return List<MovieModel>.from(response.data["results"] as List).map((list){
+return MovieModel.fromJson(list);
+            }) ;
+        }
+
+        else {
+            throw ServerException(
+                errorMsgModel:ErrorMsgModel.fromJson(response.data)
+            );
+        }
+    }
+
+
+  // getPopularMovies  
+@override
+   Future<List<MovieModel>> getAllNowPlayingMovies() async{
+final response = await Dio().get(Path); //be sure to use AppConstants , don't use hard coded code . getPopularMoviesPath
+        
+
+        if(response.statusCode ==200){
+            return List<MovieModel>.from(response.data["results"] as List).map((list){
+return MovieModel.fromJson(list);
+            }) ;
+        }
+
+        else {
+            throw ServerException(
+                errorMsgModel:ErrorMsgModel.fromJson(response.data)
+            );
+        }
+    }
+
+
+    
+  // getTopRatedMovies  
+@override
+   Future<List<MovieModel>> getAllNowPlayingMovies() async{
+final response = await Dio().get(Path); //be sure to use AppConstants , don't use hard coded code . getTopRatedMoviesPath
         
 
         if(response.statusCode ==200){
