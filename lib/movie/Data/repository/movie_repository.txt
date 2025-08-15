@@ -1,0 +1,22 @@
+class MovieRepository extends BaseMoviesRepositories { //override the existing methods
+
+final BaseMovieRemoteDataSource baseMovieRemoteDataSource;
+
+MovieRepository(this.baseMovieRemoteDataSource);
+
+
+    Future<List<Movie>> getAllNowPlayingMovies() async {
+
+        final result = baseMovieRemoteDataSource.getAllNowPlayingMovies();
+
+    }
+
+    Future<List<Movie>> getPopularMovies(){
+
+
+    }
+    Future<List<Movie>> getTopRatedMovies(){
+
+    }
+
+}
