@@ -1,0 +1,21 @@
+In this class we create function that calls api endpoints
+
+class MovieRemoteDataSource{
+
+   Future<List<MovieModel>> getAllNowPlayingMovies() async{
+final response = await Dio().get(Path);
+        
+
+        if(response.statusCode ==200){
+            return List<MovieModel>.from(response.data["results"] as List).map((list){
+return MovieModel.fromJson(list);
+            }) ;
+        }
+
+        else {
+            throw ServerException(
+                errorMsgModel:ErrorMsgModel.fromJson(response.data)
+            );
+        }
+    }
+}
