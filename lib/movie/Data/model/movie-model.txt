@@ -1,0 +1,7 @@
+class MovieModel extends Movie {
+
+   1] here MovieModel call super contractor of Movie class .
+
+   2] Then create toJson and fromJson function to deals with data from api 
+
+}
