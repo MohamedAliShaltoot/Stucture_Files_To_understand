@@ -1,0 +1,5 @@
+class ServerException implements Exception {
+
+    ErrorMsgModel  errorMsgModel;
+    ServerException( required this.errorMsgModel);
+}

@@ -1,0 +1,26 @@
+
+
+
+
+class ErrorMsgModel extends Equatable {
+
+    String errorMsg;
+    int statusCode;
+    bool status;
+
+  ErrorMsgModel({
+    required this.errorMsg,
+    required this.statusCode,
+    required this.status,
+  });
+
+  factory ErrorMsgModel.fromJson(json){
+    return ErrorMsgModel(
+        errorMsg:json["errorMsg"],
+     statusCode : json["statusCode"],
+     status : json["status"], 
+    );
+  }
+    
+
+}
