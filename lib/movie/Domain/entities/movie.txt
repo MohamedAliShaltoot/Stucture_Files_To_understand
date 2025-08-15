@@ -1,0 +1,9 @@
+هنا بنعمل كلاس بنحط فيه بس القيم ال احنا عاوزين نتعامل معاها لما ترجع من ال API
+
+// why extends Equatable ? because if two objects have different name but equals valuse treates as same
+
+
+Movie class extends Equatable { 
+
+    Movie Constructor;
+}

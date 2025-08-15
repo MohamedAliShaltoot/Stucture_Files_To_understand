@@ -1,0 +1,11 @@
+create an abstract class noun as a contract between layers to talk with each other.
+
+
+
+abstract class BaseMoviesRepositories {
+
+    Future<List<Movie>> getAllNowPlayingMovies();
+    Future<List<Movie>> getPopularMovies();
+    Future<List<Movie>> getTopRatedMovies();
+
+}
