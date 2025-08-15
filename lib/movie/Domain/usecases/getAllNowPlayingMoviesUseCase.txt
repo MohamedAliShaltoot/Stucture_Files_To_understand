@@ -1,0 +1,11 @@
+create getAllNowPlayingMovies class to take a reference from a domain layer BaseMoviesRepositories, then call the abstract method related to this class from it .
+
+class GetAllNowPlayingMovies{
+
+    final BaseMoviesRepositories baseMoviesRepositories;
+    GetAllNowPlayingMovies(this.baseMoviesRepositories);
+
+   Future<List<Movie>> execute() async {
+        return await baseMoviesRepositories.getAllNowPlayingMovies();
+    }
+}
