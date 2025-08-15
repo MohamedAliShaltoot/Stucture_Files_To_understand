@@ -1,0 +1,19 @@
+abstract class Failure extends Equatable {
+    final String errorMsg;
+     Failure(this.errorMsg);
+}
+
+
+ class ServerFailure extends Failure {
+  
+     ServerFailure( super this.errorMsg);
+}
+
+
+class DataBaseFailure extends Failure {
+  
+     DataBaseFailure( super this.errorMsg);
+}
+
+
+
